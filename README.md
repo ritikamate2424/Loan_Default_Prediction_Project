@@ -1,12 +1,14 @@
 # Loan_Default_Prediction_Project
 
-**1. Project Overview
-**
+
+# 1. Project Overview
+
 The goal of this project is to develop a predictive model that can accurately determine whether a loan applicant is likely to default on their loan. Early prediction of loan default helps financial institutions reduce risk, optimize loan approval processes, and minimize financial losses. This project uses machine learning models — Logistic Regression, Random Forest, and Neural Networks — to classify loan applicants into "Default" or "No Default" categories based on various applicant features.
 
 A user-friendly interface built with Streamlit allows users to input loan and personal details and receive instant predictions from the models.
 
-2. Dataset Details (Loan_default.csv)
+
+# 2. Dataset Details (Loan_default.csv)
 The dataset contains historical loan records with features relevant to the applicant's financial status and loan conditions. Key columns include:
 
 Column Name	Description
@@ -30,7 +32,9 @@ Default	Target variable indicating loan default (1 = Default, 0 = No Default)
 
 The dataset consists of both numerical and categorical variables, requiring preprocessing before model training.
 
-3. Data Preprocessing Steps
+
+# 3. Data Preprocessing Steps
+
 Handling Missing Values: Checked for and handled missing or null values, either by imputation or removal.
 
 Encoding Categorical Variables: Used LabelEncoder to convert categorical features (Education, EmploymentType, MaritalStatus, LoanPurpose) into numerical labels compatible with machine learning models.
@@ -41,7 +45,8 @@ Feature Scaling: Applied standard scaling (StandardScaler) to numerical features
 
 Train-Test Split: Split the data into training and testing sets to evaluate model generalization.
 
-4. Model Training Details
+# 4. Model Training Details
+
 Logistic Regression
 A linear model used for binary classification.
 
@@ -71,7 +76,10 @@ Output layer with sigmoid activation for binary classification.
 
 Compiled with binary cross-entropy loss and Adam optimizer.
 
-5. Evaluation Metrics with Code Snippets
+
+# 5. Evaluation Metrics with Code Snippets
+
+
 To evaluate model performance, these metrics were computed on the test dataset:
 
 Accuracy: Overall correctness.
@@ -104,7 +112,9 @@ print(f"Neural Network Accuracy: {accuracy:.2f}")
 nn_pred = (nn_model.predict(X_test_scaled) > 0.5).astype("int32")
 
 
-6. Streamlit UI Code Snippet
+# 6. Streamlit UI Code Snippet
+
+
 The application allows interactive input and outputs predictions from all three models.
 
 import streamlit as st
@@ -151,7 +161,10 @@ if st.button("Predict"):
    st.write(f"Random Forest Prediction: {'Default' if pred_rf else 'No Default'}")
    st.write(f"Neural Network Prediction: {'Default' if pred_nn else 'No Default'} (Confidence: {pred_nn_prob:.2f})")
 
-7. Performance Comparison and Explanation
+
+# 7. Performance Comparison and Explanation
+
+
 Model	Accuracy (Test Set)	Notes
 Logistic Regression	~X%	Good baseline; interpretable
 Random Forest	~Y%	Better handling of nonlinearities
